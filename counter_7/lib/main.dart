@@ -61,6 +61,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _decrementCounter() {
+    setState(() {
+      if (_counter > 0) {
+        _counter--;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -95,9 +103,21 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+            if (_counter % 2 == 0) ...[
+              const Text(
+                "Genap",
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+              )
+            ] else ...[
+              const Text(
+                "Ganjil",
+                style: TextStyle(
+                  color: Colors.blue,
+                ),
+              ),
+            ],
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
@@ -105,10 +125,28 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+
+      floatingActionButton: Stack(
+        children: <Widget>[
+          Positioned(
+              bottom: 10,
+              right: 10,
+              child: FloatingActionButton(
+                onPressed: _incrementCounter,
+                tooltip: 'Increment',
+                child: const Icon(Icons.add),
+              )),
+          if (_counter > 0) ...[
+            Positioned(
+                bottom: 10,
+                left: 40,
+                child: FloatingActionButton(
+                  onPressed: _decrementCounter,
+                  tooltip: 'Decrement',
+                  child: const Icon(Icons.remove),
+                )),
+          ]
+        ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
