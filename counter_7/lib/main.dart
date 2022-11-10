@@ -105,14 +105,14 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             if (_counter % 2 == 0) ...[
               const Text(
-                "Genap",
+                "GENAP",
                 style: TextStyle(
                   color: Colors.red,
                 ),
               )
             ] else ...[
               const Text(
-                "Ganjil",
+                "GANJIL",
                 style: TextStyle(
                   color: Colors.blue,
                 ),
