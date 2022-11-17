@@ -15,6 +15,7 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+# Tugas 7
 ### 1. Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.
 Stateless widget adalah widget yang tidak pernah berubah, seperti Icon, IconButton, dan Text.<br>
 Stateful widget adalah widget yang dinamis, ia dapat berubah tampilan jika terjadi event yang di-trigger oleh user atau ketika menerima data.
@@ -39,3 +40,28 @@ Const dan final adalah keyword yang di-assign pada sebuah variabel. Const berart
 - Menambahkan fungsi decrementCounter untuk decrement counter.
 - Membuat kondisi jika counter bernilai genap/ganjil maka akan muncul text genap/ganjil dengan styling berwarna merah/biru.
 - Menambahkan button decrement dan memposisikannya menggunakan Stack dan Positioned. Button decrement hanya muncul jika nilai counter > 0.
+
+# Tugas 8
+### 1. Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement.
+Perbedaan push dengan pushReplacement adalah pada fungsi pop. Push replacement menggantikan page sebelumnya dengan page yang dibuka, sedangkan pop hanya menumpuk page-page tersebut dalam stack. 
+
+### 2. Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+Padding: Untuk memberikan padding TextFormField: Untuk membuat input text.<br>
+Center: Membuat komponen di center <br>
+Column: Membuat sebuah column agar dapat membuat komponen atas dan bawah<br> 
+TextButton: Sebuah button yang memiliki text<br> 
+DropdownButtonFormField: Dropdown field yang memiliki validator
+
+### 3. Sebutkan jenis-jenis event yang ada pada Flutter (contoh: onPressed).
+onPressed<br> onChange<br> onTap<br> onSaved<br>
+
+### 4. Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
+Navigator mengontrol stack yang berisi objek-objek rute yang mempunyai 2 tipe yaitu deklaratif dan imperatif API (pop, push). Navigation bekerja seperti stack yaitu halaman yang terakhir ada di stack merupakan halaman yang akan diperlihatkan. Setiap kali ada perubahan halaman, maka halaman tersebut akan di push kedalam stack, namun apabila kita ingin kembali ke halaman sebelumnya kita harus melakukan pop.
+
+### 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+- Membuat 2 file : add_budget dan data_budget.
+- Membuat drawer pada semua file.
+- Membuat input field dan meng-handle input pada add_budget.
+- Memasukkan data budget yang diinput pada list.
+- Menggunakan list tersebut sebagai argumen ke data_budget.
+- Pada data_budget, digunakan data yang didapat untuk menampilkan hasil budget.
