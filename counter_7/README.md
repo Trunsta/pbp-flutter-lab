@@ -46,7 +46,8 @@ Const dan final adalah keyword yang di-assign pada sebuah variabel. Const berart
 Perbedaan push dengan pushReplacement adalah pada fungsi pop. Push replacement menggantikan page sebelumnya dengan page yang dibuka, sedangkan pop hanya menumpuk page-page tersebut dalam stack. 
 
 ### 2. Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
-Padding: Untuk memberikan padding TextFormField: Untuk membuat input text.<br>
+Padding: Untuk memberikan padding<br> 
+TextFormField: Untuk membuat input text.<br>
 Center: Membuat komponen di center <br>
 Column: Membuat sebuah column agar dapat membuat komponen atas dan bawah<br> 
 TextButton: Sebuah button yang memiliki text<br> 
@@ -65,3 +66,32 @@ Navigator mengontrol stack yang berisi objek-objek rute yang mempunyai 2 tipe ya
 - Memasukkan data budget yang diinput pada list.
 - Menggunakan list tersebut sebagai argumen ke data_budget.
 - Pada data_budget, digunakan data yang didapat untuk menampilkan hasil budget.
+
+# Tugas 9
+### 1. Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Bisa, namun tanpa models data yang didapatkan merupakan data mentah dari HTTP response sehingga akan lebih sulit untuk memproses data. Maka lebih baik membuat models sebelum mengambil data JSON. 
+
+### 2. Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+`Scaffold` Mengimplemen struktur *layout material design* dasar.<br>
+`AppBar` Bar pada bagian atas halaman.<br>
+`Padding` Memberi *padding* pada child widget.<br>
+`Stack` Children widget dapat saling menimpa/overlap.<br>
+`Column` Menempatkan children pada *array* vertikal.<br>
+`Row` Menempatkan children pada *array* horizontal.<br>
+`Center` Menempatkan child pada posisi tengah.<br>
+`GestureDetector` Widget yang men-detect *gesture*.
+
+### 3. Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+- Menambahkan dependency http ke proyek.
+- Membuat model sesuai dengan respons dari data yang berasal dari web service tersebut.
+- Membuat http request ke web service menggunakan dependency http.
+- Mengkonversikan objek yang didapatkan dari web service ke model yang telah kita buat.
+- Menampilkan data yang telah dikonversi ke aplikasi dengan FutureBuilder.
+
+### 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+- Menambahkan dependensi HTTP pada proyek.
+- Membuat model untuk memproses data JSON.
+- Membuat fungsi untuk fetch data.
+- Menggunakan future builder untuk fetch dan men-display data.
+- Membuat page detail yang berisi detail dari objek MyWatchList
+- Menggunakan widget GestureDetector agar judul watchlist dapat di-*press* dan mengarah ke page detail.
